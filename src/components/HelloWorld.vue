@@ -1,5 +1,9 @@
 <template>
   <v-container>
+    store count: {{$store.state.count}}
+    <br>
+    <button @click="$store.commit('increment')">+</button>
+    <button @click="$store.commit('decrement')">-</button>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
