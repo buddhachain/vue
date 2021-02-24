@@ -4,6 +4,10 @@ import vuetify from "@/plugins/vuetify";
 import router from "@/router";
 import store from "@/store";
 import "@/axios";
+import "@/assets/iconfont/iconfont";
+import smoothScroll from "smoothscroll-polyfill";
+
+smoothScroll.polyfill();
 Vue.config.productionTip = false;
 
 new Vue({
