@@ -8,12 +8,16 @@
           placeholder="文殊菩萨加特"
           prepend-inner-icon="mdi-magnify"
         ></v-text-field>
-        <div class="toTop" href="#top" @click="toTop()">
+        <div class="toTop"  @click="toTop()">
           <v-icon color="primary" class="icon">mdi-arrow-collapse-up</v-icon>
           <p>回顶部</p>
         </div>
       </div>
     </header>
+    <div class="more-box">
+      <span>祈福佛事</span>
+      <span class="more">更多 <v-icon>mdi-chevron-right</v-icon></span>
+    </div>
     <ul>
       <li v-for="(item, index) in list" :key="index">
         <img :src="item.img" alt="" />
@@ -93,7 +97,6 @@ export default {
 
 <style lang="scss">
 .home {
-  height: 800px;
   header {
     position: fixed;
     top: 0;
@@ -101,6 +104,7 @@ export default {
     right: 0;
     background-color: #fff;
     height: 60px;
+    z-index: 1;
   }
   .search-box {
     display: flex;
@@ -138,26 +142,49 @@ export default {
       }
     }
   }
+  .more-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 65px;
+    font-size: 14px;
+    padding: 0 10px;
+    font-weight: bold;
+    .more {
+      color: #999999;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 20px;
+    }
+    .v-icon {
+      font-size: 20px;
+      margin-left: -5px;
+    }
+  }
   ul {
     padding: 0 10px;
     list-style: none;
-    margin-top: 80px;
+    margin-top: 15px;
+    margin-bottom: 80px;
     li {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 15px;
       img {
         width: 80px;
         border-radius: 3px;
       }
       .content {
-        padding: 5px 0 0 10px;
+        padding-left: 12px;
+
         h1 {
-          font-size: 16px;
+          font-size: 15px;
           font-weight: normal;
+          margin-bottom: 5px;
         }
         h2 {
-          font-size: 14px;
+          font-size: 13px;
           font-weight: normal;
           color: #555;
         }
@@ -168,13 +195,13 @@ export default {
           padding: 1px 6px;
           font-size: 12px;
           border-radius: 9px;
-          margin-right: 10px;
+          margin-right: 6px;
         }
         p {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          color: #555;
+          color: #999;
           font-size: 12px;
           margin: 0;
         }

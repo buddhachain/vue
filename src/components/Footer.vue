@@ -43,12 +43,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.v-item-group.v-bottom-navigation {
+  position: fixed;
+}
 .theme--light.v-btn--active:hover::before,
 .theme--light.v-btn--active::before {
   opacity: 0;
 }
 .v-btn:not(.v-btn--round).v-size--default {
   height: 100%;
+  background-color: #fff;
 }
 .v-btn:not(.v-btn--round).v-size--x-large {
   height: 100%;
