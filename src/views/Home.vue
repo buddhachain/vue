@@ -8,7 +8,7 @@
           placeholder="文殊菩萨加特"
           prepend-inner-icon="mdi-magnify"
         ></v-text-field>
-        <div class="toTop"  @click="toTop()">
+        <div class="toTop" @click="toTop()">
           <v-icon color="primary" class="icon">mdi-arrow-collapse-up</v-icon>
           <p>回顶部</p>
         </div>
@@ -28,7 +28,11 @@
             type
           }}</span>
           <p>
-            <span>{{ item.address }}</span>
+            <span>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-simiao"></use></svg
+              >{{ item.address }}</span
+            >
             <span>{{ item.persons }}人参与</span>
           </p>
         </div>
@@ -204,6 +208,9 @@ export default {
           color: #999;
           font-size: 12px;
           margin: 0;
+          .icon {
+            width: 1.1em;
+          }
         }
       }
     }
