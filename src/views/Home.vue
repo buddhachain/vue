@@ -19,7 +19,7 @@
       <span class="more">更多 <v-icon>mdi-chevron-right</v-icon></span>
     </div>
     <ul>
-      <li v-for="(item, index) in list" :key="index">
+      <li v-for="(item, index) in list" :key="index" @click="toDetail()">
         <img :src="item.img" alt="" />
         <div class="content">
           <h1>{{ item.title }}</h1>
@@ -38,13 +38,16 @@
         </div>
       </li>
     </ul>
+    <Footer />
   </div>
 </template>
 
 <script>
 import img1 from "@/assets/images/fo.jpg";
+import Footer from "@/components/Footer";
 export default {
   name: "Home",
+  components: { Footer },
   data() {
     return {
       list: [
@@ -94,6 +97,9 @@ export default {
   methods: {
     toTop() {
       window.scroll({ top: 0, left: 0, behavior: "smooth" });
+    },
+    toDetail() {
+      this.$router.push("/list-detail");
     }
   }
 };
